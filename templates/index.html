@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Loan Status Prediction Model</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Age" placeholder="Age" required="required" />
+        <input type="text" name="Income" placeholder="Income" required="required" />
+		<input type="text" name="Home ownership" placeholder="Home ownership" required="required" />
+		<input type="text" name="Employee length" placeholder="Employee length" required="required" />
+      <input type="text" name="Loan intent" placeholder="Loan intent" required="required" />
+        <input type="text" name="Loan grade" placeholder="Loan grade" required="required" />
+		<input type="text" name="Percent Income" placeholder="Percent Income" required="required" />
+		<input type="text" name="Credit Person default on file" placeholder="Credit Person default on file" required="required" />
+       <input type="text" name="Credit History Length" placeholder="Credit History Length" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
